@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:00:40 by skhallou          #+#    #+#             */
-/*   Updated: 2025/01/21 16:07:27 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/01/22 21:40:28 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,6 @@ typedef struct s_list
 } t_list;
 
 
-//linkedlist
-
-t_list	*ft_lstnew(int content);
-t_list	*ft_lstlast(t_list *lst);
-t_list	ft_lstadd_back(t_list **lst, t_list *new);
-int		lstsize(t_list *lst);
 
 //parsing
 
@@ -40,6 +34,29 @@ void	indexing_content(t_list **stack);
 void	parsing(int ac, char **av, t_list **stack);
 void	fill_stack(t_list **stack, char **splited);
 
+//moves
+
+void	swap(t_list **stack, char c);
+void	push(t_list **dest, t_list **src, char c);
+void	rotate(t_list **stack, char c);
+void	reverse_rotate(t_list **stack, char c);
+
+//helperlist
+
+t_list	*ft_lstnew(int content);
+t_list	*ft_lstlast(t_list *lst);
+t_list	ft_lstadd_back(t_list **lst, t_list *new);
+int		ft_lstsize(t_list *lst);
+
+//helper
+
+int ft_atoi(char *s, t_list **stack);
+int is_space_tab(char *s);
+int ft_strlen(char *s);
+char *ft_strdup(char *src);
+char join(char *s1, char *s2);
+
+//tools
 
 
 

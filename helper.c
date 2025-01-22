@@ -6,13 +6,13 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:00:20 by skhallou          #+#    #+#             */
-/*   Updated: 2025/01/20 21:37:17 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/01/22 21:40:00 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int atoi(char *s, t_list **stack)
+int ft_atoi(char *s, t_list **stack)
 {
 	int		i;
 	int		sign;

@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pivotsorting.c                                     :+:      :+:    :+:   */
+/*   helper1.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/19 21:31:40 by skhallou          #+#    #+#             */
-/*   Updated: 2025/01/21 16:38:39 by skhallou         ###   ########.fr       */
+/*   Created: 2025/01/21 18:07:40 by skhallou          #+#    #+#             */
+/*   Updated: 2025/01/22 21:40:46 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list **sort_3(t_list **stacka)
+ft_putstr(char *s)
 {
     
 }
 
-t_list **sort_5(t_list **stacka)
+checksorted()
 {
     
 }
 
-pivotsorting(t_list **stacka, t_list **stackb)
+free_str()
+{
+    
+}
+
+free_stack()
+{
+
+}
+
+check_error()
 {
     
 }

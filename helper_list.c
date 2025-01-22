@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:06:40 by skhallou          #+#    #+#             */
-/*   Updated: 2025/01/20 17:11:43 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/01/22 21:06:05 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	}
 }
 
-int lstsize(t_list *lst)
+int ft_lstsize(t_list *lst)
 {
 	int		i;
 	t_list	*tmp;
