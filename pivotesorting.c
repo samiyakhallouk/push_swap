@@ -6,13 +6,13 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 21:31:40 by skhallou          #+#    #+#             */
-/*   Updated: 2025/01/22 21:48:58 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/01/23 19:56:02 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list **sort_3(t_list **stacka)
+void	sort_3(t_list **stacka)
 {
 	t_list	*node1;
 	t_list	*node2;
@@ -39,25 +39,67 @@ t_list **sort_3(t_list **stacka)
 		swap(stacka, 'a');
 }
 
-t_list **sort_5(t_list **stacka, t_list **stackb)
+void	sort_five(t_list **stacka, t_list **stackb)
 {
 	int	size;
+	int flag;
 
-	
+	flag = 0;
+	size = ft_lstsize(*stacka) / 2;
 	while ((*stacka))
 	{
 		if (ft_lstsize(*stacka) > 3)
 		{
-			if ((*stacka)->index > (size / 2))
-				rotate(*stacka, 'a');
-			push(stackb, stacka, 'b');	
+			if (flag == 1)
+				size -= 1;
+			if ((*stacka)->index > size)
+			{
+				rotate(stacka, 'a');
+				flag = 0;
+			}
+			else
+			{
+				push(stackb, stacka, 'b');	
+				flag = 1;
+			}
 		}
-		(*stacka) = (*stacka)->next;
+		else
+			break;
 	}
-	sort_3(stacka);
+	sort_three(stacka);
+	while (*stackb)
+	{
+		if ((*stackb) < (*stackb)->next)
+			swap(stackb, 'b');
+		else
+			push(stacka, stackb, 'a');
+	}
 }
 
-pivotsorting(t_list **stacka, t_list **stackb)
+void	sort_fun(t_list **stacka, t_list **stackb)
 {
+	int	lp1;
+	int	p1;
+	int	p2;
+
+	lp1 = -1;
+	p1 = ft_lstsize(*stacka) / 3;
+	p2 = ft_lstsize(*stacka) / 6;
+	while (ft_lstsize(*stacka) > 3)
+	{
+		if ((*stacka)->index < p1)
+			push(stackb, stacka, 'b');
+		else
+			rotate(stacka, 'a');
+		if (ft_lstsize(*stackb) > 1 && (*stackb)->index >= lp1 && (*stackb)->index <= p2)
+			rotate(stackb, 'b');
+		if (ft_lstsize(*stackb) == p1)
+		{
+			lp1 = p1;
+			p1 += ft_lstsize(*stacka) / 3;
+			p2 = (ft_lstsize(*stacka) / 6) + lp1;
+		}
+		
+	}
 	
 }
