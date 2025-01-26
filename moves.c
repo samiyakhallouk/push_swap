@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 21:31:07 by skhallou          #+#    #+#             */
-/*   Updated: 2025/01/22 18:21:37 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/01/26 20:18:15 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,42 +23,49 @@ void	swap(t_list **stack, char c)
 	tmp->next = *stack;
 	*stack = tmp;
 	if (c == 'a')
-		ft_putstr("sa");
+		ft_putstr("sa\n");
 	else if (c == 'b')
-		ft_putstr("sb");
+		ft_putstr("sb\n");
 }
 
 void	push(t_list **dest, t_list **src, char c)
 {
 	t_list	*tmp;
 
+	if (!src)
+		return ;
 	tmp = *src;
 	*src = (*src)->next;
 	tmp->next = (*dest);
 	*src = tmp;
 	if (c == 'a')
-		ft_putstr("pa");
+		ft_putstr("pa\n");
 	if (c == 'b')
-		ft_putstr("pb");
+		ft_putstr("pb\n");
 }
 
 void	rotate(t_list **stack, char c)
 {
 	t_list *tmp;
 
+	if (!(*stack) || !(*stack)->next)
+		return ;
 	tmp = *stack;
 	(*stack) = (*stack)->next;
-	ft_lstadd_back(stack, tmp);
+	ft_lstlast(tmp)-> next = tmp;
+	tmp -> next = NULL;
 	if (c == 'a')
-		ft_putstr("ra");
+		ft_putstr("ra\n");
 	if (c == 'b')
-		ft_putstr("rb");
+		ft_putstr("rb\n");
 }
 
 void	reverse_rotate(t_list **stack, char c)
 {
 	t_list *tmp;
 
+	if (!(*stack) || !(*stack)->next)
+		return ;
 	tmp = *stack;
 	while (tmp->next->next != NULL)
 		tmp = tmp->next;
@@ -66,7 +73,7 @@ void	reverse_rotate(t_list **stack, char c)
 	*stack = tmp->next;
 	tmp->next = NULL;
 	if (c == 'a')
-		ft_pustr("rra");
+		ft_putstr("rra\n");
 	if (c == 'b')
-		ft_putstr("rrb");
+		ft_putstr("rrb\n");
 }

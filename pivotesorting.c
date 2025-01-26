@@ -6,13 +6,13 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 21:31:40 by skhallou          #+#    #+#             */
-/*   Updated: 2025/01/23 19:56:02 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/01/26 22:25:59 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_3(t_list **stacka)
+void	sort_three(t_list **stacka)
 {
 	t_list	*node1;
 	t_list	*node2;
@@ -20,7 +20,7 @@ void	sort_3(t_list **stacka)
 
 	node1 = (*stacka);
 	node2 = (*stacka)->next;
-	node3 = (*stacka)->next->content;
+	node3 = (*stacka)->next->next;
 	if (node1->index > node2->index && node1->index > node3->index)
 	{
 		rotate(stacka, 'a');
@@ -28,7 +28,7 @@ void	sort_3(t_list **stacka)
 		node2 = (*stacka)->next;
 		node3 = (*stacka)->next;
 	}
-	if (node1->index > node3->index)
+	if (node2->index > node3->index)
 	{
 		reverse_rotate(stacka, 'a');
 		node1 = (*stacka);
@@ -76,7 +76,7 @@ void	sort_five(t_list **stacka, t_list **stackb)
 	}
 }
 
-void	sort_fun(t_list **stacka, t_list **stackb)
+void	sort_part1(t_list **stacka, t_list **stackb)
 {
 	int	lp1;
 	int	p1;
@@ -101,5 +101,49 @@ void	sort_fun(t_list **stacka, t_list **stackb)
 		}
 		
 	}
-	
+	sort_three(stacka);
+	if (ft_lstsize(*stackb))
+		sort_part2(stacka, stackb);
+	while (*stacka)
+	{
+		printf("%d\n", (*stacka)->content);
+		(*stacka) = (*stacka)->next;
+	}
+}
+
+int index_pos(t_list **stack, int index)
+{
+	t_list	*node;
+	int		pos;
+
+	node = (*stack);
+	while (node && node->index != index)
+	{
+		pos++;
+		node = node->next;
+	}
+	return (pos);
+}
+
+void	sort_part2(t_list **stacka, t_list **stackb)
+{
+	int	i;
+
+	while ((*stackb))
+	{	
+		i = ((*stacka)->index) - 1;
+		if ((*stackb)->index != i)
+		{
+			if (index_pos(stackb, i) <= ft_lstsize(*stackb) / 2)
+				rotate(stackb, 'b');
+			else
+				reverse_rotate(stackb, 'b');
+		}
+		else
+		{
+			push(stacka, stackb, 'a');
+			if (((*stacka)->index) - 1 == lastindex(stacka))
+				reverse_rotate(stacka, 'a');
+		}		
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:00:20 by skhallou          #+#    #+#             */
-/*   Updated: 2025/01/22 21:40:00 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/01/26 22:21:06 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,10 @@ int ft_atoi(char *s, t_list **stack)
 	while (s[i])
 	{
 		if (s[i] < '0' && s[i] > '9')
-			check_error(stack);	
+			check_error(stack);
 		r = r * 10 + s[i] - '0';
+		if ((r > 2147483647 && sign) || (r > 2147483648 && sign == -1))
+			check_error(stack);
 		i++;
 	}
 	return (r * sign);
@@ -44,7 +46,7 @@ int is_space_tab(char *s)
 	i = 0;
 	while (s[i])
 	{
-			if (s[i] != " " || s[i] != "\t")
+			if (s[i] != ' ' || s[i] != '\t')
 				return (0);
 			i++;
 	}
@@ -67,10 +69,10 @@ char *ft_strdup(char *src)
 	char	*dest;
 
 	i = 0;
-	if (!dest)
-		return (0);
-	dest = malloc(ft_strlen(src) + 1);
 	if (!src)
+		return (NULL);
+	dest = malloc(ft_strlen(src) + 1);
+	if (!dest)
 		return (0);
 	while (src[i])
 	{
@@ -81,7 +83,7 @@ char *ft_strdup(char *src)
 	return (dest);
 }
 
-char join(char *s1, char *s2)
+char *join(char *s1, char *s2)
 {
 	char	*newstring;
 	int		i;
@@ -90,16 +92,19 @@ char join(char *s1, char *s2)
 
 	i = 0;
 	j = 0;
-	len = ft_strlen(s1) + ft_strlen(s2);	
 	if (!s1 && !s2)
 		return (NULL);
 	if (!s1)
 		return (ft_strdup(s2));
+	len = ft_strlen(s1) + ft_strlen(s2);	
 	newstring = malloc(len + 1);
 	if (!newstring)
 		return (0);
 	while (s1[i])
-		newstring[i++] = s1[i];
+	{
+		newstring[i] = s1[i];
+		i++;
+	}
 	while (s2[j])
 		newstring[i++] = s2[j++];
 	newstring[i] = 0;

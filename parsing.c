@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 21:27:21 by skhallou          #+#    #+#             */
-/*   Updated: 2025/01/20 17:07:55 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/01/26 20:22:12 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	check_repeat(t_list **stack)
 	}
 }
 
-void	indexing_content(t_list **stack)
+void	indexing_node(t_list **stack)
 {
 	t_list	*tmp;
 	t_list	*node;
@@ -82,20 +82,20 @@ void	indexing_content(t_list **stack)
 
 void	fill_stack(t_list **stack, char **splited)
 {
-	int	n;
-	int	i;
+	int		n;
+	int		i;
 	t_list *node;
 	
 	i = 0;
 	while (splited[i])
 	{
 		n = ft_atoi(splited[i], stack);
-		node = ft_lstnew(n);
+		node = ft_lstnew(&n);
 		ft_lstadd_back(stack, node);
 		i++;
 	}
 	check_repeat(stack);
-	indexing_content(stack);
+	indexing_node(stack);
 }
 
 void	parsing(int ac, char **av, t_list **stack)
@@ -103,10 +103,10 @@ void	parsing(int ac, char **av, t_list **stack)
 	char	**splited;
 	char	*list;
 
-	list = join(ac, av);
+	list = join_list(ac, av);
 	if (!list)
 		exit(1);
-	splited = ft_split(list, " ");
+	splited = ft_split(list, ' ');
 	free(list);
 	if (!splited)
 	{

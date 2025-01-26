@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 21:31:47 by skhallou          #+#    #+#             */
-/*   Updated: 2025/01/22 17:08:30 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/01/26 22:19:57 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,11 @@ static char	*count_word_len(char *s, char c)
 	new = malloc(len + 1);
 	if (!new)
 		return (0);
-	while (s[i])
-		new[i++] = s[i++];
+	while (i < len)
+	{
+		new[i] = s[i];
+		i++;
+	}
 	new[i] = '\0';
 	return (new);
 }
@@ -89,7 +92,7 @@ static char	**full_word(char *s, char **array, char c)
 	return (array);
 }
 
-char	**split(char *s, char c)
+char	**ft_split(char *s, char c)
 {
 	int	n;
 	char **array;

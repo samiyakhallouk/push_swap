@@ -6,20 +6,21 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:06:40 by skhallou          #+#    #+#             */
-/*   Updated: 2025/01/22 21:06:05 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/01/26 20:49:40 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*ft_lstnew(int content)
+t_list	*ft_lstnew(int *content)
 {
 	t_list	*newnode;
 
 	newnode = malloc(sizeof(t_list));
 	if (!newnode)
 		return (0);
-	newnode->content = content;
+	newnode->content = *content;
+	newnode->index = 0;
 	newnode->next = NULL;
 	return (newnode);
 }
@@ -28,7 +29,7 @@ t_list	*ft_lstlast(t_list *lst)
 {
 	if (!lst)
 		return (0);
-	while (lst->next != NULL)
+	while (lst->next)
 		lst = lst->next;
 	return (lst);
 }
@@ -66,7 +67,14 @@ int ft_lstsize(t_list *lst)
 	return (i);
 }
 
-int lastindex()
+int	lastindex(t_list **stack)
 {
-	
+	t_list	*node;
+
+	node = *stack;
+	while (node->next)
+	{
+		node = node->next;
+	}
+	return (node->index);
 }
