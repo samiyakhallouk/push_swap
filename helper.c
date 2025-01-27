@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:00:20 by skhallou          #+#    #+#             */
-/*   Updated: 2025/01/27 22:04:31 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/01/27 22:42:45 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ int is_space_tab(char *s)
 	i = 0;
 	while (s[i])
 	{
-			if (s[i] != ' ' || s[i] != '\t')
-				return (0);
-			i++;
+		if (s[i] != ' ' && s[i] != '\t')
+			return (0);
+		i++;
 	}
 	return (1);
 }

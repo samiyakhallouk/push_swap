@@ -6,21 +6,21 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:06:40 by skhallou          #+#    #+#             */
-/*   Updated: 2025/01/27 21:47:34 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/01/27 22:44:19 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*ft_lstnew(int *content)
+t_list	*ft_lstnew(int content)
 {
 	t_list	*newnode;
 
 	newnode = malloc(sizeof(t_list));
 	if (!newnode)
 		return (0);
-	newnode->content = *content;
-	newnode->index = 0;
+	newnode->content = content;
+	// newnode->index = 0;
 	newnode->next = NULL;
 	return (newnode);
 }

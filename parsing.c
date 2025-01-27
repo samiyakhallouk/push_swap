@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 21:27:21 by skhallou          #+#    #+#             */
-/*   Updated: 2025/01/27 21:47:59 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/01/27 22:44:29 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ void	fill_stack(t_list **stack, char **splited)
 	while (splited[i])
 	{
 		n = ft_atoi(splited[i], stack);
-		node = ft_lstnew(&n);
+		node = ft_lstnew(n);
 		ft_lstadd_back(stack, node);
 		i++;
 	}

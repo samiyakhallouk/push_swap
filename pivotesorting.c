@@ -6,11 +6,26 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 21:31:40 by skhallou          #+#    #+#             */
-/*   Updated: 2025/01/27 21:44:40 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/01/27 22:40:42 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int index_pos(t_list **stack, int index)
+{
+	t_list	*node;
+	int		pos;
+
+	node = (*stack);
+	pos = 0;
+	while (node && node->index != index)
+	{
+		pos++;
+		node = node->next;
+	}
+	return (pos);
+}
 
 void	sort_three(t_list **stack)
 {
@@ -92,19 +107,6 @@ void	sort_part1(t_list **stacka, t_list **stackb)
 		sort_part2(stacka, stackb);
 }
 
-int index_pos(t_list **stack, int index)
-{
-	t_list	*node;
-	int		pos;
-
-	node = (*stack);
-	while (node && node->index != index)
-	{
-		pos++;
-		node = node->next;
-	}
-	return (pos);
-}
 
 void	sort_part2(t_list **stacka, t_list **stackb)
 {
