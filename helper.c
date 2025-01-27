@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:00:20 by skhallou          #+#    #+#             */
-/*   Updated: 2025/01/26 22:21:06 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/01/27 22:04:31 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int ft_atoi(char *s, t_list **stack)
 	}
 	while (s[i])
 	{
-		if (s[i] < '0' && s[i] > '9')
+		if (s[i] < '0' || s[i] > '9')
 			check_error(stack);
 		r = r * 10 + s[i] - '0';
 		if ((r > 2147483647 && sign) || (r > 2147483648 && sign == -1))
@@ -99,7 +99,10 @@ char *join(char *s1, char *s2)
 	len = ft_strlen(s1) + ft_strlen(s2);	
 	newstring = malloc(len + 1);
 	if (!newstring)
+	{
+		free(s1);
 		return (0);
+	}
 	while (s1[i])
 	{
 		newstring[i] = s1[i];

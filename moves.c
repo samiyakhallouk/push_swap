@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 21:31:07 by skhallou          #+#    #+#             */
-/*   Updated: 2025/01/26 20:18:15 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/01/27 21:01:40 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	push(t_list **dest, t_list **src, char c)
 	tmp = *src;
 	*src = (*src)->next;
 	tmp->next = (*dest);
-	*src = tmp;
+	*dest = tmp;
 	if (c == 'a')
 		ft_putstr("pa\n");
 	if (c == 'b')

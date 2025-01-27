@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 18:07:40 by skhallou          #+#    #+#             */
-/*   Updated: 2025/01/26 20:34:33 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/01/27 22:04:47 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	free_stack(t_list **stack)
 	t_list	*curr;
 
 	curr = (*stack);
-	while (curr->next)
+	while (curr && curr->next)
 	{
 		node = curr->next;
 		free(curr);
@@ -79,7 +79,7 @@ int	checksorted(t_list **stack)
 	node = (*stack);
 	while (node->next)
 	{
-		if (node->index > node->next->index)
+		if (node->content > node->next->content)
 			return (0);
 		node = node->next;
 	}

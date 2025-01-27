@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:52:55 by skhallou          #+#    #+#             */
-/*   Updated: 2025/01/26 22:21:35 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/01/27 21:04:25 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ int	main(int ac, char *av[])
 			
 		}	
 	}
-	// free_stack(&stacka);
-	// free_stack(&stackb);
+	free_stack(&stacka);
+	free_stack(&stackb);
 }
