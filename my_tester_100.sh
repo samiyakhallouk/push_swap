@@ -4,7 +4,7 @@ max=0
 echo "checker | moves | max_moves"
 while true
 do
-    ARG=$(seq 1 500 | sort -R | tr '\n' ' ')
+    ARG=$(seq 1 100 | sort -R | tr '\n' ' ')
     num=$(./push_swap $ARG | wc -l)
     echo "      $num    $max"
     ./push_swap $ARG | ./checker_linux $ARG

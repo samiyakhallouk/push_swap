@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 21:31:40 by skhallou          #+#    #+#             */
-/*   Updated: 2025/01/31 17:08:51 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/01/31 20:14:32 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void	sort_part1(t_list **stacka, t_list **stackb)
 			push(stackb, stacka, 'b');
 		else
 			rotate(stacka, 'a');
-		if (ft_lstsize(*stackb) > 1 && (*stackb)->index >= p0 && (*stackb)->index <= p2)
+		if (ft_lstsize(*stackb) > 1 && (*stackb)->index > p0 && (*stackb)->index < p2)
 			rotate(stackb, 'b');
 		if (ft_lstsize(*stackb) == p1)
 		{
@@ -113,80 +113,24 @@ void	sort_part2(t_list **stacka, t_list **stackb)
 	int	big_index;
 
 	big_index = lastindex(stacka);
-	while ((*stackb))
+	while ((*stackb) || !checksorted(stacka))
 	{	
 		i = ((*stacka)->index) - 1;
-		while ((*stackb)->index != i)
+		while ((*stackb) && (*stackb)->index != i)
 		{
 			if (lastindex(stacka) < (*stackb)->index || lastindex(stacka) == big_index)
 			{
 				push(stacka, stackb, 'a');
 				rotate(stacka, 'a');
 			}
-			
-			else if (index_pos(stackb, i) <= ft_lstsize(*stackb) / 2)
+			else if ((*stackb) && index_pos(stackb, i) <= ft_lstsize(*stackb) / 2)
 				rotate(stackb, 'b');
-			else if (index_pos(stackb, i) > ft_lstsize(*stackb) / 2)
+			else if ((*stackb) && index_pos(stackb, i) > ft_lstsize(*stackb) / 2)
 				reverse_rotate(stackb, 'b');
 		}
-		while ((*stackb)->index == i)
+		while ((*stackb) && (*stackb)->index == ((*stacka)->index - 1))
 			push(stacka, stackb, 'a');
 		while (((*stacka)->index) - 1 == lastindex(stacka))
 			reverse_rotate(stacka, 'a');		
 	}
 }
-
-// void	sort_part1(t_list **stacka, t_list **stackb, int p1, int p2)
-// {
-// 	int	p0;
-
-// 	p0 = -1;
-// 	while (ft_lstsize(*stacka) > 3)
-// 	{
-// 		if ((*stacka)->index < p1)
-// 			push(stackb, stacka, 'b');
-// 		else
-// 			rotate(stacka, 'a');
-// 		if (ft_lstsize(*stackb) > 1 && (*stackb)->index >= p0
-// 			&& (*stackb)->index <= p2)
-// 			rotate(stackb, 'b');
-// 		if (ft_lstsize(*stackb) == p1)
-// 		{
-// 			p0 = p1;
-// 			p1 += ft_lstsize(*stacka) / 3;
-// 			p2 = ft_lstsize(*stacka) / 6 + p0;
-// 		}
-// 	}
-// 	sort_three(stacka);
-// 	if (ft_lstsize(*stackb))
-// 		sort_part2(stacka, stackb, lastindex(stacka));
-// }
-
-// void	sort_part2(t_list **s_a, t_list **s_b, int bgind)
-// {
-// 	int	btind;
-
-// 	btind = lastindex(s_a);
-// 	while ((*s_b))
-// 	{
-// 		while ((*s_b) && (*s_b)->index != ((*s_a)->index) - 1)
-// 		{
-// 			if ((*s_b) && (lastindex(s_a) < (*s_b)->index || btind == bgind))
-// 			{
-// 				push(s_a, s_b, 'a');
-// 				rotate(s_a, 'a');
-// 				btind = lastindex(s_a);
-// 			}
-// 			else if ((*s_b) && ft_lstsize(*s_b)
-// 				&& index_pos(s_b, (*s_a)->index - 1) <= ft_lstsize(*s_b) / 2)
-// 				rotate(s_b, 'b');
-// 			else if ((*s_b) && ft_lstsize(*s_b)
-// 				&& index_pos(s_b, (*s_a)->index - 1) > ft_lstsize(*s_b) / 2)
-// 				reverse_rotate(s_b, 'b');
-// 		}
-// 		while (*s_b && ((*s_b)->index == ((*s_a)->index) - 1))
-// 			push(s_a, s_b, 'a');
-// 		while (lastindex(s_a) == ((*s_a)->index) - 1)
-// 			reverse_rotate(s_a, 'a');
-// 	}
-// }
