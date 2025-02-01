@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:00:40 by skhallou          #+#    #+#             */
-/*   Updated: 2025/01/27 22:44:46 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/01 17:20:49 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,13 @@ void	check_error(t_list **stack);
 int		checksorted(t_list **stack);
 
 char	**ft_split(char *s, char c);
+
+//applymovesonstack
+
+int		ft_strcmp(char *s1, char *s2);
+int		is_valid(char *move);
+void	applymoves(char *move, t_list **stacka, t_list **stackb);
+void	applymovesonstack(char **moves, t_list **stacka, t_list **stackb);
+
 
 #endif

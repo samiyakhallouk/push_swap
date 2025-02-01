@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 21:27:21 by skhallou          #+#    #+#             */
-/*   Updated: 2025/01/27 22:44:29 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/01 18:27:40 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ char	*join_list(int ac, char **av)
 	{
 		if (!av[i] || is_space_tab(av[i]))
 		{
-			write(1, "Error\n", 6);
-			exit(1);
+			write(2, "Error\n", 6);
+			exit(2);
 		}
 		
 		tmp = join(new, av[i]);

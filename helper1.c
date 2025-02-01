@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 18:07:40 by skhallou          #+#    #+#             */
-/*   Updated: 2025/01/27 22:04:47 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/01 18:24:27 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,8 @@ void	check_error(t_list **stack)
 		}
 		(*stack) = NULL;
 	}
-	write(1, "error\n", 6);
-	exit(1);
+	write(2, "error\n", 6);
+	exit(2);
 }
 
 int	checksorted(t_list **stack)

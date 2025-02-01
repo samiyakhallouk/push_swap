@@ -6,22 +6,60 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 18:59:52 by skhallou          #+#    #+#             */
-/*   Updated: 2025/01/31 19:03:27 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/01 19:11:34 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+char	**ft_read(void)
+{
+	char	*buffer;
+	char	*line;
+	char	**res;
+	int		byte_read;
+
+	line = NULL;
+	byte_read = 1;
+	buffer = malloc(100 + 1);
+	if (!buffer)
+		return (NULL);
+	while (byte_read)
+	{
+		byte_read = read(1, buffer, 100);
+		if (byte_read < 0)
+		{
+			free(buffer);
+			return (NULL);
+		}
+		buffer[byte_read] = '\0';
+		line = join(line, buffer);
+	}
+	free(buffer);
+	res = ft_split(line, '\n');
+	free(line);
+	return (res);
+}
+
 int main(int ac, char **av)
 {
 	t_list	*stacka;
 	t_list	*stackb;
+	char	**moves;
 
 	stacka = NULL;
 	stackb = NULL;
 	if (ac != 1)
 	{
-		
+		parsing(ac, av, &stacka);
+		moves = ft_read();
+		applymovesonstack(moves, &stacka, &stackb);
+		if (checksorted(&stacka) && stackb == NULL)
+			ft_putstr("ok\n");
+		else
+			ft_putstr("ko\n");
 	}
-	  
+	free(moves);
+	free_stack(&stacka);
+	free_stack(&stackb);
 }
