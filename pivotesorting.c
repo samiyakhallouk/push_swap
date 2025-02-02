@@ -6,13 +6,13 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 21:31:40 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/02 17:14:09 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/02 17:50:55 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int index_pos(t_list **stack, int index)
+int	index_pos(t_list **stack, int index)
 {
 	t_list	*node;
 	int		pos;
@@ -57,6 +57,7 @@ void	sort_three(t_list **stack)
 void	sort_five(t_list **stacka, t_list **stackb)
 {
 	int	size;
+
 	size = ft_lstsize(*stacka) / 2;
 	while ((*stacka))
 	{

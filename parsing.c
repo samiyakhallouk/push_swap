@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 21:27:21 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/01 18:27:40 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/02 17:49:07 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	fill_stack(t_list **stack, char **splited)
 {
 	int		n;
 	int		i;
-	t_list *node;
+	t_list	*node;
 	
 	i = 0;
 	while (splited[i])

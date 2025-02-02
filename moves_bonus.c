@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   movse_bonus.c                                      :+:      :+:    :+:   */
+/*   moves_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 17:09:50 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/02 17:10:41 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/02 17:48:04 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	push1(t_list **dest, t_list **src)
 
 void	rotate1(t_list **stack)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	if (!(*stack) || !(*stack)->next)
 		return ;
@@ -50,7 +50,7 @@ void	rotate1(t_list **stack)
 
 void	reverse_rotate1(t_list **stack)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	if (!(*stack) || !(*stack)->next)
 		return ;

@@ -6,13 +6,13 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:00:20 by skhallou          #+#    #+#             */
-/*   Updated: 2025/01/31 18:35:43 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/02 17:46:37 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_atoi(char *s, t_list **stack)
+int	ft_atoi(char *s, t_list **stack)
 {
 	int		i;
 	int		sign;
@@ -39,7 +39,7 @@ int ft_atoi(char *s, t_list **stack)
 	return (r * sign);
 }
 
-int is_space_tab(char *s)
+int	is_space_tab(char *s)
 {
 	int	i;
 
@@ -53,7 +53,7 @@ int is_space_tab(char *s)
 	return (1);
 }
 
-int ft_strlen(char *s)
+int	ft_strlen(char *s)
 {
 	int	i;
 
@@ -63,7 +63,7 @@ int ft_strlen(char *s)
 	return (i);
 }
 
-char *ft_strdup(char *src)
+char	*ft_strdup(char *src)
 {
 	int		i;
 	char	*dest;
@@ -83,7 +83,7 @@ char *ft_strdup(char *src)
 	return (dest);
 }
 
-char *join(char *s1, char *s2)
+char	*join(char *s1, char *s2)
 {
 	char	*newstring;
 	int		i;

@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 21:31:07 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/02 17:26:15 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/02 17:48:20 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	push(t_list **dest, t_list **src, char c)
 
 void	rotate(t_list **stack, char c)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	if (!(*stack) || !(*stack)->next)
 		return ;
@@ -62,7 +62,7 @@ void	rotate(t_list **stack, char c)
 
 void	reverse_rotate(t_list **stack, char c)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	if (!(*stack) || !(*stack)->next)
 		return ;
