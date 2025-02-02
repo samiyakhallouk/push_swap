@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:52:55 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/02 17:43:04 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/02 17:43:49 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 int	main(int ac, char **av)
 {
-	atexit(f);
+	// atexit(f);
 	t_list	*stacka;
 	t_list	*stackb;
 
