@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:00:40 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/01 17:20:49 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/02 17:07:08 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void	push(t_list **dest, t_list **src, char c);
 void	rotate(t_list **stack, char c);
 void	reverse_rotate(t_list **stack, char c);
 
+
 //helperlist
 
 t_list	*ft_lstnew(int content);
@@ -74,12 +75,20 @@ int		checksorted(t_list **stack);
 
 char	**ft_split(char *s, char c);
 
+
+//moves_bonus
+
+void	swap1(t_list **stack);
+void	push1(t_list **dest, t_list **src);
+void	rotate1(t_list **stack);
+void	reverse_rotate1(t_list **stack);
+
+
 //applymovesonstack
 
 int		ft_strcmp(char *s1, char *s2);
 int		is_valid(char *move);
 void	applymoves(char *move, t_list **stacka, t_list **stackb);
 void	applymovesonstack(char **moves, t_list **stacka, t_list **stackb);
-
 
 #endif

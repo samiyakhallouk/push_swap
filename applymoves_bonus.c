@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 16:40:41 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/01 18:27:01 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/02 17:08:38 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,21 +51,21 @@ int	is_valid(char *move)
 void	applymoves(char *move, t_list **stacka, t_list **stackb)
 {
 	if (ft_strcmp(move, "sa") == 0)
-		swap(stacka, 'a');
+		swap1(stacka);
 	else if (ft_strcmp(move, "sb") == 0)
-		swap(stackb, 'b');
+		swap1(stackb);
 	else if (ft_strcmp(move, "pa") == 0)
-		push(stacka, stackb,'a');
+		push1(stacka, stackb);
 	else if (ft_strcmp(move, "pb") == 0)
-		push(stackb, stacka,'b');
+		push1(stackb, stacka);
 	else if (ft_strcmp(move, "ra") == 0)
-		rotate(stacka, 'a');
+		rotate1(stacka);
 	else if (ft_strcmp(move, "rb") == 0)
-		rotate(stackb, 'b');
+		rotate1(stackb);
 	else if (ft_strcmp(move, "rra") == 0)
-		reverse_rotate(stacka, 'a');
+		reverse_rotate1(stacka);
 	else if (ft_strcmp(move, "rrb") == 0)
-		reverse_rotate(stackb, 'b');
+		reverse_rotate1(stackb);
 }
 
 void	applymovesonstack(char **moves, t_list **stacka, t_list **stackb)
@@ -78,7 +78,7 @@ void	applymovesonstack(char **moves, t_list **stacka, t_list **stackb)
 		if (!is_valid(moves[i]))
 		{
 			write(2, "Error!\n", 6);
-			exit(1);
+			exit(2);
 		}
 		applymoves(moves[i], stacka, stackb);
 		i++;

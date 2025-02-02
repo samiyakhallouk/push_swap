@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 18:59:52 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/01 19:11:34 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/02 17:08:25 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ char	**ft_read(void)
 
 	line = NULL;
 	byte_read = 1;
-	buffer = malloc(100 + 1);
+	buffer = malloc(1000 + 1);
 	if (!buffer)
 		return (NULL);
 	while (byte_read)
 	{
-		byte_read = read(1, buffer, 100);
+		byte_read = read(0, buffer, 1000);
 		if (byte_read < 0)
 		{
 			free(buffer);

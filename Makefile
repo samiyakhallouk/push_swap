@@ -3,7 +3,7 @@ BNAME = checker
 CC = cc
 CFLAGS = -Wall -Wextra -Werror #-g -fsanitize=address
 SRC = helper_list.c helper.c helper1.c moves.c parsing.c pivotesorting.c push_swap.c split.c
-BSRC = checker.c applymoves.c helper_list.c helper.c helper1.c moves.c parsing.c pivotesorting.c split.c
+BSRC = checker.c applymoves_bonus.c helper_list.c helper.c helper1.c moves.c moves_bonus.c parsing.c pivotesorting.c split.c
 OBJ = $(SRC:.c=.o)
 BOBJ = $(BSRC:.c=.o)
 HEAD = push_swap.h
