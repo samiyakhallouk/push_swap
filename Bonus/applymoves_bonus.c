@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   applymoves.c                                       :+:      :+:    :+:   */
+/*   applymoves_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 16:40:41 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/02 17:08:38 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/02 19:36:05 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 int		ft_strcmp(char *s1, char *s2)
 {
@@ -51,21 +51,21 @@ int	is_valid(char *move)
 void	applymoves(char *move, t_list **stacka, t_list **stackb)
 {
 	if (ft_strcmp(move, "sa") == 0)
-		swap1(stacka);
+		swap(stacka);
 	else if (ft_strcmp(move, "sb") == 0)
-		swap1(stackb);
+		swap(stackb);
 	else if (ft_strcmp(move, "pa") == 0)
-		push1(stacka, stackb);
+		push(stacka, stackb);
 	else if (ft_strcmp(move, "pb") == 0)
-		push1(stackb, stacka);
+		push(stackb, stacka);
 	else if (ft_strcmp(move, "ra") == 0)
-		rotate1(stacka);
+		rotate(stacka);
 	else if (ft_strcmp(move, "rb") == 0)
-		rotate1(stackb);
+		rotate(stackb);
 	else if (ft_strcmp(move, "rra") == 0)
-		reverse_rotate1(stacka);
+		reverse_rotate(stacka);
 	else if (ft_strcmp(move, "rrb") == 0)
-		reverse_rotate1(stackb);
+		reverse_rotate(stackb);
 }
 
 void	applymovesonstack(char **moves, t_list **stacka, t_list **stackb)

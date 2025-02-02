@@ -6,13 +6,13 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 17:09:50 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/02 17:48:04 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/02 19:34:35 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
-void	swap1(t_list **stack)
+void	swap(t_list **stack)
 {
 	t_list	*tmp;
 
@@ -24,7 +24,7 @@ void	swap1(t_list **stack)
 	*stack = tmp;
 }
 
-void	push1(t_list **dest, t_list **src)
+void	push(t_list **dest, t_list **src)
 {
 	t_list	*tmp;
 
@@ -36,7 +36,7 @@ void	push1(t_list **dest, t_list **src)
 	*dest = tmp;
 }
 
-void	rotate1(t_list **stack)
+void	rotate(t_list **stack)
 {
 	t_list	*tmp;
 
@@ -48,7 +48,7 @@ void	rotate1(t_list **stack)
 	tmp -> next = NULL;
 }
 
-void	reverse_rotate1(t_list **stack)
+void	reverse_rotate(t_list **stack)
 {
 	t_list	*tmp;
 

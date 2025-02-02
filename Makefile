@@ -2,14 +2,22 @@ NAME = push_swap
 BNAME = checker
 CC = cc
 CFLAGS = -Wall -Wextra -Werror #-g -fsanitize=address
-SRC = helper_list.c helper.c helper1.c moves.c parsing.c pivotesorting.c push_swap.c split.c
-BSRC = checker.c applymoves_bonus.c helper_list.c helper.c helper1.c moves_bonus.c parsing.c split.c
+SRC = Mandatory/helper_list.c Mandatory/helper.c Mandatory/helper1.c\
+		Mandatory/moves.c Mandatory/parsing.c Mandatory/pivotesorting.c\
+		Mandatory/push_swap.c Mandatory/split.c
+
+BSRC = Bonus/checker.c Bonus/applymoves_bonus.c Bonus/helper_list_bonus.c\
+		Bonus/helper_bonus.c Bonus/helper1_bonus.c Bonus/moves_bonus.c\
+		Bonus/parsing_bonus.c Bonus/split_bonus.c
+
 OBJ = $(SRC:.c=.o)
 BOBJ = $(BSRC:.c=.o)
+
 HEAD = push_swap.h
+BHEAD = push_swap_bonus.h
 RM = rm -f
 
-%.o: %.c $(HEAD)
+Mandatory/%.o:Mandatory/%.c $(HEAD)
 	$(CC) $(CFLAGS) -c $< -o $@
 	
 all: $(NAME)
@@ -22,11 +30,14 @@ bonus : $(BNAME)
 $(BNAME): $(BOBJ)
 	$(CC) $(CFLAGS) $(BOBJ) -o $(BNAME)
 
+Bonus/%.o:Bonus/%.c $(HEAD)
+	$(CC) $(CFLAGS) -c $< -o $@
+
 clean:
 	$(RM) $(OBJ) $(BOBJ)
 	
 fclean: clean
-	rm -f $(BNAME)
-	rm -f $(NAME)
+	$(RM) $(BNAME)
+	$(RM) $(NAME)
 
 re: fclean all

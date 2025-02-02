@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:00:40 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/02 17:51:30 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/02 19:38:36 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef PUSH_SWAP_BONUS_H
+# define PUSH_SWAP_BONUS_H
 
 # include <unistd.h>
 # include <stdlib.h>
@@ -32,22 +32,6 @@ void	check_repeat(t_list **stack);
 void	indexing_node(t_list **stack);
 void	parsing(int ac, char **av, t_list **stack);
 void	fill_stack(t_list **stack, char **splited);
-
-//pivotesorting
-
-void	sort_three(t_list **stacka);
-void	sort_five(t_list **stacka, t_list **stackb);
-void	sort_part1(t_list **stacka, t_list **stackb);
-int 	index_pos(t_list **stack, int index);
-void	sort_part2(t_list **stacka, t_list **stackb);
-
-//moves
-
-void	swap(t_list **stack, char c);
-void	push(t_list **dest, t_list **src, char c);
-void	rotate(t_list **stack, char c);
-void	reverse_rotate(t_list **stack, char c);
-
 
 //helperlist
 
@@ -78,10 +62,10 @@ char	**ft_split(char *s, char c);
 
 //moves_bonus
 
-void	swap1(t_list **stack);
-void	push1(t_list **dest, t_list **src);
-void	rotate1(t_list **stack);
-void	reverse_rotate1(t_list **stack);
+void	swap(t_list **stack);
+void	push(t_list **dest, t_list **src);
+void	rotate(t_list **stack);
+void	reverse_rotate(t_list **stack);
 
 
 //applymovesonstack

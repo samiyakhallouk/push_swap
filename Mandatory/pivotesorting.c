@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 21:31:40 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/02 17:50:55 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/02 19:42:36 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	sort_five(t_list **stacka, t_list **stackb)
 	if ((*stackb)->index < (*stackb)->next->index)
 		swap(stackb, 'b');
 	while ((*stackb))
-		push(stacka, stackb, 'a');	
+		push(stacka, stackb, 'a');
 }
 
 void	sort_part1(t_list **stacka, t_list **stackb)
