@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 18:07:40 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/03 17:30:12 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/03 20:22:11 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	check_error(t_list **stack)
 		}
 		(*stack) = NULL;
 	}
-	write(2, "error\n", 6);
+	write(2, "Error\n", 6);
 	exit(2);
 }
 
