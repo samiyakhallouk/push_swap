@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:00:20 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/02 17:46:37 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/03 17:02:22 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,13 +96,10 @@ char	*join(char *s1, char *s2)
 		return (NULL);
 	if (!s1)
 		return (ft_strdup(s2));
-	len = ft_strlen(s1) + ft_strlen(s2);	
+	len = ft_strlen(s1) + ft_strlen(s2);
 	newstring = malloc(len + 1);
 	if (!newstring)
-	{
-		free(s1);
-		return (0);
-	}
+		return (free(s1), NULL);
 	while (s1[i])
 	{
 		newstring[i] = s1[i];
@@ -111,6 +108,5 @@ char	*join(char *s1, char *s2)
 	while (s2[j])
 		newstring[i++] = s2[j++];
 	newstring[i] = 0;
-	free(s1);
-	return (newstring);
+	return (free(s1), newstring);
 }

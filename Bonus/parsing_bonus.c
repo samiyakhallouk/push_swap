@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 21:27:21 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/02 18:37:03 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/03 16:39:46 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ char	*join_list(int ac, char **av)
 			write(2, "Error\n", 6);
 			exit(2);
 		}
-		
 		tmp = join(new, av[i]);
 		new = join(tmp, " ");
 		i++;
@@ -85,7 +84,7 @@ void	fill_stack(t_list **stack, char **splited)
 	int		n;
 	int		i;
 	t_list	*node;
-	
+
 	i = 0;
 	while (splited[i])
 	{

@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:00:40 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/02 18:42:25 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/03 16:57:24 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
-#include <stdio.h>
+# include <stdio.h>
 
 typedef struct s_list
 {
@@ -38,8 +38,8 @@ void	fill_stack(t_list **stack, char **splited);
 void	sort_three(t_list **stacka);
 void	sort_five(t_list **stacka, t_list **stackb);
 void	sort_part1(t_list **stacka, t_list **stackb);
-int 	index_pos(t_list **stack, int index);
-void	sort_part2(t_list **stacka, t_list **stackb);
+int		index_pos(t_list **stack, int index);
+void	sort_part2(t_list **stacka, t_list **stackb, int big_index);
 
 //moves
 
@@ -47,7 +47,6 @@ void	swap(t_list **stack, char c);
 void	push(t_list **dest, t_list **src, char c);
 void	rotate(t_list **stack, char c);
 void	reverse_rotate(t_list **stack, char c);
-
 
 //helperlist
 
@@ -59,11 +58,11 @@ int		lastindex(t_list **stack);
 
 //helper
 
-int ft_atoi(char *s, t_list **stack);
-int is_space_tab(char *s);
-int ft_strlen(char *s);
-char *ft_strdup(char *src);
-char *join(char *s1, char *s2);
+int		ft_atoi(char *s, t_list **stack);
+int		is_space_tab(char *s);
+int		ft_strlen(char *s);
+char	*ft_strdup(char *src);
+char	*join(char *s1, char *s2);
 
 //helper1
 

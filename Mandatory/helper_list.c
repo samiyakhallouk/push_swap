@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:06:40 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/02 17:45:40 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/03 16:44:29 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ t_list	*ft_lstnew(int content)
 	if (!newnode)
 		return (0);
 	newnode->content = content;
-	// newnode->index = 0;
 	newnode->next = NULL;
 	return (newnode);
 }

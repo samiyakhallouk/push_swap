@@ -7,7 +7,7 @@ do
     ARG=$(seq 1 500 | sort -R | tr '\n' ' ')
     num=$(./push_swap $ARG | wc -l)
     echo "      $num    $max"
-    ./push_swap $ARG | ./checker_linux $ARG
+    ./push_swap $ARG | ./checker_Mac $ARG
     if [ "$num" -gt "$max" ]; then
         max=$num
     fi

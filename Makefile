@@ -1,7 +1,7 @@
 NAME = push_swap
 BNAME = checker
 CC = cc
-CFLAGS = -Wall -Wextra -Werror #-g -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror
 SRC = Mandatory/helper_list.c Mandatory/helper.c Mandatory/helper1.c\
 		Mandatory/moves.c Mandatory/parsing.c Mandatory/pivotesorting.c\
 		Mandatory/push_swap.c Mandatory/split.c

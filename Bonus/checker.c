@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 18:59:52 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/02 18:33:47 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/03 18:03:48 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,15 +40,20 @@ char	**ft_read(void)
 	free(line);
 	return (res);
 }
-
+void f()
+{
+	system("leaks checker");
+}
 int	main(int ac, char **av)
 {
+	atexit(f);
 	t_list	*stacka;
 	t_list	*stackb;
 	char	**moves;
 
 	stacka = NULL;
 	stackb = NULL;
+	moves = NULL;
 	if (ac != 1)
 	{
 		parsing(ac, av, &stacka);
@@ -59,7 +64,7 @@ int	main(int ac, char **av)
 		else
 			ft_putstr("ko\n");
 	}
-	free(moves);
+	free_str(moves);
 	free_stack(&stacka);
 	free_stack(&stackb);
 }

@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:00:40 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/02 19:38:36 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/03 16:40:59 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
-#include <stdio.h>
+# include <stdio.h>
 
 typedef struct s_list
 {
@@ -43,11 +43,11 @@ int		lastindex(t_list **stack);
 
 //helper
 
-int ft_atoi(char *s, t_list **stack);
-int is_space_tab(char *s);
-int ft_strlen(char *s);
-char *ft_strdup(char *src);
-char *join(char *s1, char *s2);
+int		ft_atoi(char *s, t_list **stack);
+int		is_space_tab(char *s);
+int		ft_strlen(char *s);
+char	*ft_strdup(char *src);
+char	*join(char *s1, char *s2);
 
 //helper1
 
@@ -59,14 +59,12 @@ int		checksorted(t_list **stack);
 
 char	**ft_split(char *s, char c);
 
-
 //moves_bonus
 
 void	swap(t_list **stack);
 void	push(t_list **dest, t_list **src);
 void	rotate(t_list **stack);
 void	reverse_rotate(t_list **stack);
-
 
 //applymovesonstack
 
