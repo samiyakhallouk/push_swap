@@ -27,7 +27,7 @@ bonus : $(BNAME)
 $(BNAME): $(BOBJ)
 	$(CC) $(CFLAGS) $(BOBJ) -o $(BNAME)
 
-%.o: %.c $(HEAD)
+Mandatory/%.o: Mandatory/%.c $(HEAD)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 %bonus.o: %bonus.c $(BHEAD)
