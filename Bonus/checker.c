@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 18:59:52 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/07 20:07:21 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/07 21:49:27 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,14 @@ char	**ft_read(void)
 		if (byte_read < 0)
 			return (free(buffer), NULL);
 		buffer[byte_read] = '\0';
-		line = join(line, buffer);
-		if (!is_valid(buffer))
+		printf("%s", buffer);
+		printf("n = %d\n", byte_read);
+		if (byte_read && !is_valid(buffer))
 		{
 			write(2, "Error\n", 6);
-			return(NULL);
+			exit(2);
 		}
+		line = join(line, buffer);
 	}
 	free(buffer);
 	return (res = ft_split(line, '\n'), free(line), res);
@@ -50,15 +52,16 @@ int	main(int ac, char **av)
 	stacka = NULL;
 	stackb = NULL;
 	moves = NULL;
+	if (ac == 1) return (0);
 	if (ac != 1)
 	{
 		parsing(ac, av, &stacka);
 		moves = ft_read();
 		applymovesonstack(moves, &stacka, &stackb);
 		if (checksorted(&stacka) && stackb == NULL)
-			ft_putstr("ok\n");
+			ft_putstr("OK\n");
 		else
-			ft_putstr("ko\n");
+			ft_putstr("KO\n");
 	}
 	free_str(moves);
 	free_stack(&stacka);
