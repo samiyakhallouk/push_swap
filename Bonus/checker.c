@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 18:59:52 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/03 18:03:48 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/07 20:07:21 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,25 +28,21 @@ char	**ft_read(void)
 	{
 		byte_read = read(0, buffer, 1000);
 		if (byte_read < 0)
-		{
-			free(buffer);
-			return (NULL);
-		}
+			return (free(buffer), NULL);
 		buffer[byte_read] = '\0';
 		line = join(line, buffer);
+		if (!is_valid(buffer))
+		{
+			write(2, "Error\n", 6);
+			return(NULL);
+		}
 	}
 	free(buffer);
-	res = ft_split(line, '\n');
-	free(line);
-	return (res);
+	return (res = ft_split(line, '\n'), free(line), res);
 }
-void f()
-{
-	system("leaks checker");
-}
+
 int	main(int ac, char **av)
 {
-	atexit(f);
 	t_list	*stacka;
 	t_list	*stackb;
 	char	**moves;

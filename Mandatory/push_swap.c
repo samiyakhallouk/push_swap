@@ -6,20 +6,16 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:52:55 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/03 17:26:30 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/07 15:15:49 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void f()
-{
-	system("leaks push_swap");
-}
+
 
 int	main(int ac, char **av)
 {
-	// atexit(f);
 	t_list	*stacka;
 	t_list	*stackb;
 

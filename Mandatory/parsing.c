@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 21:27:21 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/03 16:44:58 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/07 14:31:55 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	check_repeat(t_list **stack)
 		while (tmp)
 		{
 			if (node->content == tmp->content)
-				free_stack(stack);
+				check_error(stack);
 			tmp = tmp->next;
 		}
 		node = node->next;
