@@ -6,40 +6,110 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 18:59:52 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/07 21:49:27 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/08 18:57:04 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
 
+// char	**ft_read(void)
+// {
+// 	char	*buffer;
+// 	char	*line;
+// 	char	**res;
+// 	int		byte_read;
+// 	char	*tmp;
+// 	int i = 0;
+
+// 	line = NULL;
+// 	byte_read = 1;
+// 	// buffer = malloc(1000 + 1);
+// 	// if (!buffer)
+// 	// 	return (NULL);
+// 	while (byte_read)
+// 	{
+// 		buffer = malloc(1000 + 1);
+// 		if (!buffer)
+// 			return (NULL);
+// 		byte_read = read(0, buffer, 1000);
+// 		if (byte_read < 0)
+// 			return (free(buffer), NULL);
+// 	char	**ft_read(void)
+// {
+// 	char	*buffer;
+// 	char	*line;
+// 	char	**res;
+// 	int		byte_read;
+// 	char	*tmp;
+// 	int i = 0;
+
+// 	line = NULL;
+// 	byte_read = 1;
+// 	// buffer = malloc(1000 + 1);
+// 	// if (!buffer)
+// 	// 	return (NULL);
+// 	while (byte_read)
+// 	{
+// 		buffer = malloc(1000 + 1);
+// 		if (!buffer)
+// 			return (NULL);
+// 		byte_read = read(0, buffer, 1000);
+// 		if (byte_read < 0)
+// 			return (free(buffer), NULL);
+// 		buffer[byte_read] = '\0';
+// 		while (buffer[i] && buffer[i] != '\n')
+// 			i++;
+// 		if (buffer[i] && buffer[i] == '\n')
+// 			i++;
+// 		tmp = malloc(i + 1);
+// 		i = 0;
+// 		while (buffer[i] && buffer[i] != '\n')
+// 		{
+// 			tmp[i] = buffer[i];
+// 			i++;
+// 		}
+// 		if (buffer[i] && buffer[i] == '\n')
+// 		{
+// 			tmp[i] = buffer[i];
+// 			i++;
+// 		}
+// 		tmp[i] = '\0';
+// 		printf("%s", tmp);
+// 		// printf("n = %d\n", byte_read);
+// 		if (!is_valid(tmp) && byte_read)
+// 		{
+// 			write(2, "Errop\n", 6);
+// 			exit(2);
+// 		}
+// 		free(tmp);
+// 		tmp = NULL;
+// 		line = join(line, buffer);
+// 		free(buffer);
+// 		buffer = NULL;
+// 	}
+// 	return (res = ft_split(line, '\n'), free(line), res);
+// }
+
 char	**ft_read(void)
 {
-	char	*buffer;
-	char	*line;
+	char	*tmp;
 	char	**res;
-	int		byte_read;
+	char	*line;
 
 	line = NULL;
-	byte_read = 1;
-	buffer = malloc(1000 + 1);
-	if (!buffer)
-		return (NULL);
-	while (byte_read)
+	tmp = get_next_line();
+	while (tmp)
 	{
-		byte_read = read(0, buffer, 1000);
-		if (byte_read < 0)
-			return (free(buffer), NULL);
-		buffer[byte_read] = '\0';
-		printf("%s", buffer);
-		printf("n = %d\n", byte_read);
-		if (byte_read && !is_valid(buffer))
+		if (!is_valid(tmp))
 		{
-			write(2, "Error\n", 6);
+			free(tmp);
+			write(2, "Errop\n", 6);
 			exit(2);
 		}
-		line = join(line, buffer);
+		line = join(line, tmp);
+		free(tmp);
+		tmp = get_next_line();
 	}
-	free(buffer);
 	return (res = ft_split(line, '\n'), free(line), res);
 }
 
