@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:00:40 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/08 17:15:36 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/08 19:49:55 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@ typedef struct s_list
 	int				index;
 	struct s_list	*next;
 }	t_list;
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
 
 //parsing
 
@@ -73,6 +77,8 @@ int		is_valid(char *move);
 void	applymoves(char *move, t_list **stacka, t_list **stackb);
 void	applymovesonstack(char **moves, t_list **stacka, t_list **stackb);
 
-char	*get_next_line(void);
+char	*get_next_line(int fd);
+
+
 
 #endif

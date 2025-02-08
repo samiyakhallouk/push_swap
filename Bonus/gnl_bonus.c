@@ -6,11 +6,12 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 17:11:12 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/08 18:55:20 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/08 19:53:40 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
+#include <limits.h>
 
 static char	*ft_strchr(char *s, int c)
 {
@@ -44,13 +45,13 @@ static char	*read_file(char *reminder)
 	int		byte_read;
 	char	*buffer;
 
-	buffer = (char *)malloc(sizeof(char) * 1 + 1);
+	buffer = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
 	if (!buffer)
 		return (free(reminder), reminder = NULL, NULL);
 	byte_read = 1;
 	while (byte_read)
 	{
-		byte_read = read(0, buffer, 1);
+		byte_read = read(0, buffer, BUFFER_SIZE);
 		if (byte_read == -1)
 			return (free(buffer), buffer = NULL, reminder);
 		buffer[byte_read] = '\0';
@@ -62,14 +63,16 @@ static char	*read_file(char *reminder)
 	return (reminder);
 }
 
-char	*get_next_line(void)
+char	*get_next_line(int fd)
 {
-	char	*reminder;
+	static char	*reminder;
 	char		*line;
 	int			i;
 	char		*tmp;
 
-	reminder = NULL;
+	if (fd < 0 || BUFFER_SIZE <= 0 || BUFFER_SIZE > INT_MAX
+		|| read(fd, reminder, 0) < 0)
+		return (free(reminder), reminder = NULL, NULL);
 	reminder = read_file(reminder);
 	if (!reminder || !*reminder)
 		return (free(reminder), reminder = NULL, NULL);
