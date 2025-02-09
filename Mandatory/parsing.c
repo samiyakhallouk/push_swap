@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 21:27:21 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/07 14:31:55 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/09 15:35:43 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ char	*join_list(int ac, char **av)
 	{
 		if (!av[i] || is_space_tab(av[i]))
 		{
+			free(new);
 			write(2, "Error\n", 6);
 			exit(2);
 		}
@@ -34,7 +35,7 @@ char	*join_list(int ac, char **av)
 	return (new);
 }
 
-void	check_repeat(t_list **stack)
+void	check_repeat(t_list **stack, char **splited)
 {
 	t_list	*tmp;
 	t_list	*node;
@@ -48,7 +49,7 @@ void	check_repeat(t_list **stack)
 		while (tmp)
 		{
 			if (node->content == tmp->content)
-				check_error(stack);
+				check_error(stack, splited);
 			tmp = tmp->next;
 		}
 		node = node->next;
@@ -88,12 +89,12 @@ void	fill_stack(t_list **stack, char **splited)
 	i = 0;
 	while (splited[i])
 	{
-		n = ft_atoi(splited[i], stack);
+		n = ft_atoi(splited[i], stack, splited);
 		node = ft_lstnew(n);
 		ft_lstadd_back(stack, node);
 		i++;
 	}
-	check_repeat(stack);
+	check_repeat(stack, splited);
 	indexing_node(stack);
 }
 
@@ -108,10 +109,7 @@ void	parsing(int ac, char **av, t_list **stack)
 	splited = ft_split(list, ' ');
 	free(list);
 	if (!splited)
-	{
-		free_str(splited);
 		exit(1);
-	}
 	fill_stack(stack, splited);
 	free_str(splited);
 }

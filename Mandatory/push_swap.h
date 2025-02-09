@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:00:40 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/07 14:56:14 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/09 15:34:33 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct s_list
 //parsing
 
 char	*join_list(int ac, char **av);
-void	check_repeat(t_list **stack);
+void	check_repeat(t_list **stack, char **splited);
 void	indexing_node(t_list **stack);
 void	parsing(int ac, char **av, t_list **stack);
 void	fill_stack(t_list **stack, char **splited);
@@ -58,7 +58,7 @@ int		lastindex(t_list **stack);
 
 //helper
 
-int		ft_atoi(char *s, t_list **stack);
+int		ft_atoi(char *s, t_list **stack, char **splited);
 int		is_space_tab(char *s);
 int		ft_strlen(char *s);
 char	*ft_strdup(char *src);
@@ -69,7 +69,7 @@ char	*join(char *s1, char *s2);
 void	ft_putstr(char *s);
 void	free_str(char **str);
 void	free_stack(t_list **stack);
-void	check_error(t_list **stack);
+void	check_error(t_list **stack, char **splited);
 int		checksorted(t_list **stack);
 
 char	**ft_split(char *s, char c);

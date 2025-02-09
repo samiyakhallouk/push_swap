@@ -6,13 +6,13 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:00:20 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/03 17:02:46 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/09 15:38:46 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
 
-int	ft_atoi(char *s, t_list **stack)
+int	ft_atoi(char *s, t_list **stack, char **splited)
 {
 	int		i;
 	int		sign;
@@ -30,10 +30,10 @@ int	ft_atoi(char *s, t_list **stack)
 	while (s[i])
 	{
 		if (s[i] < '0' || s[i] > '9')
-			check_error(stack);
+			check_error(stack, splited);
 		r = r * 10 + s[i] - '0';
 		if ((r > 2147483647 && sign) || (r > 2147483648 && sign == -1))
-			check_error(stack);
+			check_error(stack, splited);
 		i++;
 	}
 	return (r * sign);

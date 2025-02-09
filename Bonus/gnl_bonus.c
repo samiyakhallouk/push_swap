@@ -6,12 +6,11 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 17:11:12 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/08 19:53:40 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/09 16:44:27 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
-#include <limits.h>
 
 static char	*ft_strchr(char *s, int c)
 {

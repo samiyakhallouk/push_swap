@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 18:07:40 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/03 20:20:59 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/09 16:22:42 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,15 @@ void	free_str(char **str)
 	int	i;
 
 	i = 0;
+	if (!str)
+		return ;
 	while (str[i])
 	{
 		free(str[i]);
 		i++;
 	}
 	free(str);
+	str = NULL;
 }
 
 void	free_stack(t_list **stack)
@@ -52,7 +55,7 @@ void	free_stack(t_list **stack)
 	(*stack) = NULL;
 }
 
-void	check_error(t_list **stack)
+void	check_error(t_list **stack, char **splited)
 {
 	t_list	*node;
 	t_list	*curr;
@@ -66,7 +69,8 @@ void	check_error(t_list **stack)
 			free(curr);
 			curr = node;
 		}
-		(*stack) = NULL;
+		stack = NULL;
+		free_str(splited);
 	}
 	write(2, "Error\n", 6);
 	exit(2);

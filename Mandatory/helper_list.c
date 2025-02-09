@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:06:40 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/07 13:13:55 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/09 16:20:31 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstnew(int content)
 
 	newnode = malloc(sizeof(t_list));
 	if (!newnode)
-		return (0);
+		return (NULL);
 	newnode->content = content;
 	newnode->next = NULL;
 	return (newnode);
