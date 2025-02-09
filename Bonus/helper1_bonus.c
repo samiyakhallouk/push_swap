@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 18:07:40 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/09 16:35:43 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/09 17:34:31 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	free_stack(t_list **stack)
 		free(curr);
 		curr = node;
 	}
-	(*stack) = NULL;
+	stack = NULL;
 }
 
 void	check_error(t_list **stack, char **splited)

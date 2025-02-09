@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:00:40 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/09 15:43:53 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/09 18:09:56 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,5 @@ void	applymoves(char *move, t_list **stacka, t_list **stackb);
 void	applymovesonstack(char **moves, t_list **stacka, t_list **stackb);
 
 char	*get_next_line(int fd);
-
-
 
 #endif

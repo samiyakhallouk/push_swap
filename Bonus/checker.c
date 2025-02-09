@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 18:59:52 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/09 16:44:08 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/09 18:33:32 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,33 +37,45 @@ char	**ft_read(t_list **stack)
 		free(tmp);
 		tmp = get_next_line(0);
 	}
+	free(tmp);
 	return (res = ft_split(line, '\n'), free(line), res);
 }
+static void	check_move(t_list **stacka, t_list **stackb)
+{
+	char	**moves;
+	
+	moves = NULL;
+	moves = ft_read(stacka);
+	if (!moves)
+	{
+		free_stack(stacka);
+		free_stack(stackb);
+		ft_putstr("KO\n");
+		exit(0);
+	}
+	applymovesonstack(moves, stacka, stackb);
+	free_str(moves);
+}
+
 
 int	main(int ac, char **av)
 {
 	t_list	*stacka;
 	t_list	*stackb;
-	char	**moves;
+	
 
 	stacka = NULL;
 	stackb = NULL;
-	moves = NULL;
-	if (ac == 1)
-		return (0);
 	if (ac != 1)
 	{
 		parsing(ac, av, &stacka);
-		moves = ft_read(&stacka);
-		if (!moves)
-			return (0);
-		applymovesonstack(moves, &stacka, &stackb);
+		check_move(&stacka, &stackb);
 		if (checksorted(&stacka) && stackb == NULL)
 			ft_putstr("OK\n");
 		else
 			ft_putstr("KO\n");
 	}
-	free_str(moves);
 	free_stack(&stacka);
 	free_stack(&stackb);
+	return (0);
 }
