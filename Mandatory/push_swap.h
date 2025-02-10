@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:00:40 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/09 15:34:33 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/10 14:40:57 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void	fill_stack(t_list **stack, char **splited);
 //pivotesorting
 
 void	sort_three(t_list **stacka);
-void	sort_five(t_list **stacka, t_list **stackb);
 void	sort_part1(t_list **stacka, t_list **stackb);
 int		index_pos(t_list **stack, int index);
 void	sort_part2(t_list **stacka, t_list **stackb, int big_index);

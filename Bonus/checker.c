@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 18:59:52 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/09 18:33:32 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/10 14:42:19 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,11 @@ char	**ft_read(t_list **stack)
 	free(tmp);
 	return (res = ft_split(line, '\n'), free(line), res);
 }
+
 static void	check_move(t_list **stacka, t_list **stackb)
 {
 	char	**moves;
-	
+
 	moves = NULL;
 	moves = ft_read(stacka);
 	if (!moves)
@@ -57,12 +58,10 @@ static void	check_move(t_list **stacka, t_list **stackb)
 	free_str(moves);
 }
 
-
 int	main(int ac, char **av)
 {
 	t_list	*stacka;
 	t_list	*stackb;
-	
 
 	stacka = NULL;
 	stackb = NULL;

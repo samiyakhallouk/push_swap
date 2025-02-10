@@ -6,13 +6,11 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:52:55 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/07 15:15:49 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/10 14:41:12 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-
 
 int	main(int ac, char **av)
 {
@@ -30,8 +28,6 @@ int	main(int ac, char **av)
 				swap(&stacka, 'a');
 			else if (!checksorted(&stacka) && ft_lstsize(stacka) == 3)
 				sort_three(&stacka);
-			else if (!checksorted(&stacka) && ft_lstsize(stacka) == 5)
-				sort_five(&stacka, &stackb);
 			else if (!checksorted(&stacka))
 				sort_part1(&stacka, &stackb);
 		}

@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 17:11:12 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/09 18:37:16 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/10 14:34:05 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,8 @@ char	*get_next_line(int fd)
 	if (!line)
 		return (free (reminder), reminder = NULL, NULL);
 	line = ft_strncpy(line, reminder, i);
+	if (!is_valid(line))
+		return (free(reminder), line);
 	return (tmp = ft_strdup(reminder + i),
 		free(reminder), reminder = ft_strdup(tmp), free(tmp), line);
 }
