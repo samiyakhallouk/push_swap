@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 18:07:40 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/09 17:34:31 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/15 18:39:41 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,8 @@ void	check_error(t_list **stack, char **splited)
 			curr = node;
 		}
 		stack = NULL;
-		free_str(splited);
 	}
+	free_str(splited);
 	write(2, "Error\n", 6);
 	exit(2);
 }
