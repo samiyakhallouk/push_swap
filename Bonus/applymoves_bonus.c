@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 16:40:41 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/08 19:57:22 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/19 19:53:41 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	applymovesonstack(char **moves, t_list **stacka, t_list **stackb)
 	int	i;
 
 	i = 0;
-	while (moves[i])
+	while (moves && moves[i])
 	{
 		applymoves(moves[i], stacka, stackb);
 		i++;

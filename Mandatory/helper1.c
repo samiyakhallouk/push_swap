@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 18:07:40 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/15 18:40:56 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/19 20:01:32 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int	checksorted(t_list **stack)
 	t_list	*node;
 
 	node = (*stack);
-	while (node->next)
+	while (node && node->next)
 	{
 		if (node->content > node->next->content)
 			return (0);

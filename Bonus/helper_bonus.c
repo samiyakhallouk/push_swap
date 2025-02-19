@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:00:20 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/09 15:38:46 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/19 19:55:09 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int	ft_atoi(char *s, t_list **stack, char **splited)
 			sign *= -1;
 		i++;
 	}
+	if (s[i] < '0' || s[i] > '9')
+		check_error(stack, splited);
 	while (s[i])
 	{
 		if (s[i] < '0' || s[i] > '9')

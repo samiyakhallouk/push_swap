@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 21:31:07 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/02 17:48:20 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/19 20:02:37 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	push(t_list **dest, t_list **src, char c)
 {
 	t_list	*tmp;
 
-	if (!src)
+	if (!src || !*src)
 		return ;
 	tmp = *src;
 	*src = (*src)->next;

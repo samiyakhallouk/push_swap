@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   checker_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 18:59:52 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/19 17:02:28 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/19 20:00:07 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,6 @@ static void	check_move(t_list **stacka, t_list **stackb)
 
 	moves = NULL;
 	moves = ft_read(stacka);
-	if (!moves)
-	{
-		free_stack(stacka);
-		free_stack(stackb);
-		ft_putstr("KO\n");
-		exit(0);
-	}
 	applymovesonstack(moves, stacka, stackb);
 	free_str(moves);
 }
