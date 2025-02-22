@@ -6,13 +6,13 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:00:20 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/19 19:59:59 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/22 20:56:59 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_atoi(char *s, t_list **stack, char **splited)
+long	ft_atoi(char *s, t_list **stack, char **splited)
 {
 	int		i;
 	int		sign;
@@ -34,7 +34,7 @@ int	ft_atoi(char *s, t_list **stack, char **splited)
 		if (s[i] < '0' || s[i] > '9')
 			check_error(stack, splited);
 		r = r * 10 + s[i] - '0';
-		if ((r > 2147483647 && sign) || (r > 2147483648 && sign == -1))
+		if (((r * sign) > 2147483647 && sign) || ((r * sign) > 2147483648))
 			check_error(stack, splited);
 		i++;
 	}

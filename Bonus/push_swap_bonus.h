@@ -6,7 +6,7 @@
 /*   By: skhallou <skhallou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:00:40 by skhallou          #+#    #+#             */
-/*   Updated: 2025/02/19 17:08:46 by skhallou         ###   ########.fr       */
+/*   Updated: 2025/02/22 20:55:41 by skhallou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int		lastindex(t_list **stack);
 
 //helper
 
-int		ft_atoi(char *s, t_list **stack, char **splited);
+long	ft_atoi(char *s, t_list **stack, char **splited);
 int		is_space_tab(char *s);
 int		ft_strlen(char *s);
 char	*ft_strdup(char *src);
