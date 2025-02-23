@@ -34,7 +34,7 @@ long	ft_atoi(char *s, t_list **stack, char **splited)
 		if (s[i] < '0' || s[i] > '9')
 			check_error(stack, splited);
 		r = r * 10 + s[i] - '0';
-		if (((r * sign) > 2147483647 && sign) || ((r * sign) > 2147483648))
+		if (((r * sign) > 2147483647) || ((r * sign) < -2147483648))
 			check_error(stack, splited);
 		i++;
 	}
